@@ -1,0 +1,40 @@
+<section class="cars" id="cars">
+  <div class="container">
+    <h2>Nasze modele</h2>
+    <p class="cars-desc">Popularne auta prosto z Chin</p>
+
+    @if (loading) {
+      <div class="cars-loading">
+        <p>Ładowanie oferty...</p>
+      </div>
+    } @else if (error) {
+      <div class="cars-error">
+        <p>Nie udało się załadować oferty. Spróbuj ponownie później.</p>
+      </div>
+    } @else {
+      <div class="cars-grid">
+        @for (car of cars; track car.name) {
+          <div class="car-card">
+            <div class="car-img-wrapper">
+              <img
+                [src]="car.image"
+                [alt]="car.name + ' chiński samochód'"
+                width="360"
+                height="200"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>{{ car.name }}</h3>
+              <p class="car-stat">Zasięg: <strong>{{ car.range }}</strong></p>
+              <p class="car-stat">Rok: <strong>{{ car.year }}</strong></p>
+              <p class="car-stat">Moc: <strong>{{ car.horsepower }} KM</strong></p>
+              <p class="car-price">Cena od: <strong>{{ car.price }}</strong></p>
+              <button class="btn-card">Dowiedz się więcej</button>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

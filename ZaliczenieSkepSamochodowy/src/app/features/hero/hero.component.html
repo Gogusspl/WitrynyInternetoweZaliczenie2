@@ -1,0 +1,43 @@
+<section class="hero" id="home">
+  <div class="carousel">
+
+    @for (img of images; track img; let i = $index) {
+      @if (i === currentIndex) {
+        <img
+          [src]="img"
+          [alt]="'Zdjęcie ' + (i + 1) + ' z ' + images.length"
+          class="carousel-img"
+          width="1920"
+          height="1080"
+          [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+          [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+        />
+      }
+    }
+
+    <div class="carousel-overlay"></div>
+
+    <button class="carousel-btn prev" (click)="prev()" aria-label="Poprzednie zdjęcie">&#8249;</button>
+    <button class="carousel-btn next" (click)="next()" aria-label="Następne zdjęcie">&#8250;</button>
+
+    <div class="carousel-dots">
+      @for (img of images; track $index) {
+        <span
+          class="dot"
+          [class.active]="$index === currentIndex"
+          (click)="goTo($index)"
+          [attr.aria-label]="'Przejdź do zdjęcia ' + ($index + 1)"
+          role="button"
+          tabindex="0"
+        ></span>
+      }
+    </div>
+
+  </div>
+
+  <div class="hero-text">
+    <h1>Import samochodów<br>z Chin</h1>
+    <p>Nowoczesne auta prosto z Chin na polski rynek</p>
+    <a href="#cars" class="btn-primary">Dowiedz się więcej</a>
+  </div>
+</section>
