@@ -27,7 +27,7 @@ w terminalu powinno się pojawić, że aplikacja uruchomiła się na porcie 8080
 
 4) Uruchamianie Frontend
 
-w webstorm / visualstudio należy otworzyć folder ZaliczenieSklepSamochodowy
+w webstorm / visualstudio należy otworzyć folder ZaliczenieSkepSamochodowy
 następnie w terminalu:
 npm install
 
