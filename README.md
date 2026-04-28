@@ -31,6 +31,6 @@ w webstorm / visualstudio należy otworzyć folder ZaliczenieSkepSamochodowy
 następnie w terminalu:
 npm install
 
-po zakończeniu instalacji można uruchomić kod 
+po zakończeniu instalacji można uruchomić aplikacje
 
 ng serve
